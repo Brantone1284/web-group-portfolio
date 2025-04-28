@@ -5,7 +5,406 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #616C71;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #616C71;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color:white;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #00c4b4;
+        }
+
+        .hire-me-btn {
+            background-color: #00c4b4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .hire-me-btn:hover {
+            background-color: #019a8a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('path/to/keyboard-background.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 0 50px;
+        }
+
+        .hero-content {
+            max-width: 50%;
+            text-align: left;
+        }
+
+        .hero-image {
+            max-width: 400px;
+            width: 100%;
+
+        }
+
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .hero .btn {
+            background: #00c4b4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .hero .btn.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .hero .btn:hover {
+            background-color: #019a8a;
+        }
+
+        .hero .btn.secondary:hover {
+            background-color: white;
+            color: #1a2a44;
+        }
+
+        /* Biography Section */
+        .biography {
+            display: flex;
+            padding: 50px;
+            background-color: white;
+            margin: 20px 50px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio-image img{
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .biography-content {
+            flex: 1;
+        }
+
+        .biography h3 {
+            color: #00b894;
+            margin-left: 10px;
+        }
+
+        .biography h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .biography p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .biography .info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .biography .info p {
+            margin: 0;
+        }
+
+        .biography .social {
+            margin-bottom: 20px;
+        }
+
+        .biography .social a {
+            color: #333;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .btn {
+            background: #019a8a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 600;
+        }
+
+        /* What I Do Section */
+        .what-i-do {
+            padding: 50px;
+            text-align: center;
+            background: white;
+        }
+
+        .what-i-do h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: left;
+        }
+
+        .service-card i {
+            font-size: 24px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .more-services {
+            margin-top: 20px;
+            color: #00c4b4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            padding: 50px;
+            gap: 30px;
+            background: white;
+        }
+
+        .skills img {
+            width: 50%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .skills-content {
+            width: 50%;
+        }
+
+        .skills-content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .skills-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .skill-bar {
+            margin-bottom: 20px;
+        }
+
+        .skill-bar h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar .bar {
+            background-color: #ddd;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .skill-bar .bar .progress {
+            background-color: #00c4b4;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: white;
+            margin: 20px 50px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 36px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+        }
+
+        .stat p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Success Work Section */
+        .success-work {
+            padding: 50px;
+            text-align: center;
+            background: white;
+        }
+
+        .success-work h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .work-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #3F5C72;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            background: #00b894;
+        }
+
+        .footer-logos img {
+            height: 50px;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer-contact a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: #00c4b4;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 18px;
+        }
+
+        .footer-social a:hover {
+            color: #00c4b4;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -31,7 +430,7 @@
             <h1>Web Developer</h1>
             <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I Can give your business a new Creative start right away!</p>
             <a href="#" class="btn">Hire Me</a>
-            <a href="#" class="btn secondary">My Portfolio</a>
+            <a href="#" class="btn">My Portfolio</a>
         </div>
         <div class="hero-image">
             <img src="group.webp" alt="Hero Image">
@@ -40,8 +439,11 @@
 
     <!-- Biography Section -->
     <section class="biography">
-        <img src="group pple.webp" alt="John Watson">
+        <div class="bio-image">
+            <img src="group pple.webp" alt="John Watson">
+        </div>
         <div class="biography-content">
+            <h3>My Biography</h3>
             <h2>A Lead UI Designer & Web Developer Based In UK</h2>
             <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I Can give your business a new Creative start right away! Contact me and we will discuss your projects!</p>
             <div class="info">
@@ -50,8 +452,8 @@
                     <p><strong>Email:</strong> example@mail.com</p>
                 </div>
                 <div>
-                    <p><strong>From:</strong> Nairobi, Kenya</p>
-                    <p><strong>Phone:</strong> +254 234 567 8901</p>
+                    <p><strong>From:</strong> London, UK</p>
+                    <p><strong>Phone:</strong> +21 234 567 8901</p>
                 </div>
             </div>
             <div class="social">
@@ -72,19 +474,21 @@
             <div class="service-card">
                 <i class="fas fa-laptop-code"></i>
                 <h3>Web Development</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudan.</p>
+                <p>Building responsive and engaging websites with modern web technologies.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-mobile-alt"></i>
                 <h3>App Development</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudan.</p>
+                <p>Creating user-friendly mobile and web applications tailored to your needs</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-camera"></i>
                 <h3>Photography</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudan.</p>
+                <p>Capturing beautiful moments through creative and professional Photography.</p>
             </div>
         </div>
+        <br>
+        <br>
         <a href="#" class="more-services">More Services →</a>
     </section>
 
@@ -168,6 +572,5 @@
         </div>
         <p>© 2022 UI Portfolio. All Rights Reserved</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
